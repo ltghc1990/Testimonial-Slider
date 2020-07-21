@@ -14,15 +14,15 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  font-size: 1.6rem;
-}
-
 h1 {
   margin: 10rem 0 3rem;
   font-weight: 300;
   font-size: 2rem;
   color: hsl(240, 38%, 20%);
+}
+
+p {
+  font-size: 1.6rem;
 }
 /* ------------- BACKGROUND ART------------------ */
 
@@ -49,7 +49,6 @@ h1 {
   background-image: url(/images/pattern-quotes.svg);
   height: 50px;
   width: 70px;
-
   top: 75px;
   left: 50%;
   transform: translateX(-50%);
@@ -62,8 +61,6 @@ h1 {
   left: 50%;
   transform: translateX(-50%);
   top: 46px;
-
-  /* overide */
   background-position: left;
 }
 
@@ -72,9 +69,7 @@ h1 {
   flex-direction: column;
   max-width: 375px;
   padding-top: 32px;
-  margin: 0 auto;
-  margin-top: 100px;
-  margin-bottom: 20px;
+  margin: 50px auto 20px;
 }
 
 .slider {
@@ -83,6 +78,7 @@ h1 {
 }
 
 img {
+  border-radius: 8px;
   object-fit: contain;
   max-width: 280px;
 }
@@ -93,34 +89,27 @@ img {
   left: 50%;
   transform: translate(-50%);
   bottom: -20px;
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: 2px 2px 15px hsl(240, 18%, 77%);
 }
 
 /* Button */
-button {
-  padding: 0.8rem 1.2rem;
+.btn {
+  background-color: white;
+  padding: 0.8rem 1.4rem;
   border: none;
 }
 
-button:hover {
+.btn:hover {
   cursor: pointer;
-}
-
-.back {
-  border-top-left-radius: 50%;
-  border-bottom-left-radius: 50%;
-}
-
-.foward {
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
 }
 
 .container-post {
   position: relative;
   max-width: 350px;
   text-align: center;
-  margin: 0 auto;
-  margin-bottom: 8.4rem;
+  margin: 0 auto 8.4rem;
 }
 
 .container-post-name {
@@ -128,14 +117,81 @@ button:hover {
   position: relative;
 }
 
-strong {
+.name {
   color: hsl(240, 38%, 20%);
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 900px) {
   .container {
     max-width: 900px;
     flex-direction: row-reverse;
     align-items: center;
+  }
+
+  .container-post {
+    text-align: left;
+  }
+
+  .slider {
+    margin-left: -50px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1340px;
+    padding-bottom: 143px;
+  }
+
+  .container-post {
+    max-width: 500px;
+  }
+
+  .slider {
+    /* the margin between the childs are being subtracted  */
+    margin-left: -250px;
+  }
+
+  img {
+    max-width: 500px;
+  }
+
+  .background-art {
+    width: 700px;
+    height: 620px;
+  }
+
+  .background-quote {
+    left: 30%;
+    width: 100px;
+    height: 100px;
+    top: 43px;
+  }
+  .background-curve {
+    width: 500px;
+    height: 200px;
+    top: 100px;
+    left: 140px;
+  }
+
+  h1 {
+    font-size: 3.4rem;
+  }
+
+  p {
+    font-size: 2rem;
+    margin-right: 10px;
+  }
+
+  .container-post-name {
+    display: flex;
+  }
+
+  .button-container {
+    left: 20%;
+  }
+
+  .btn {
+    padding: 1.8rem 2.2rem;
   }
 }
