@@ -96,13 +96,20 @@ img {
 
 /* Button */
 .btn {
+  outline: none;
   background-color: white;
   padding: 0.8rem 1.4rem;
   border: none;
 }
 
+.btn img {
+  transition: transform 0.1s ease;
+}
+
 .btn:hover {
   cursor: pointer;
+  /* border: 1px solid white; */
+  transform: scale(1.2);
 }
 
 .container-post {

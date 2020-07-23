@@ -6,8 +6,6 @@ const quote = document.querySelector("h1");
 const name = document.querySelector(".name");
 const job = document.querySelector(".job");
 
-console.log(fowardButton);
-
 class User {
   constructor(name, job, img, quote) {
     this.name = name;
@@ -21,19 +19,14 @@ tanya = new User(
   "Tanya Sinclair",
   "UX Engineer",
   "/images/image-tanya.jpg",
-  `“ I’ve been interested in coding for a while but never taken the jump,
-until now. I couldn’t recommend this course enough. I’m now in the job
-of my dreams and so excited about the future. ”`
+  `“ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”`
 );
 
 john = new User(
   "John Tarkpor",
   "Junior Front-end Developer",
   "/images/image-john.jpg",
-  ` “ If you want to lay the best foundation possible I’d recommend taking
-this course. The depth the instructors go into is incredible. I now feel
-so confident about starting up as a professional developer. ” John
-Tarkpor Junior Front-end Developer`
+  ` “ If you want to lay the best foundation possible I’d recommend taking this course. The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. ”`
 );
 
 let people = [tanya, john];
@@ -53,14 +46,23 @@ function setSlideIndex(parameter) {
   }
 }
 
+function changeSlide(index) {
+  portrait.src = people[index].img;
+  quote.innerText = people[index].quote;
+  name.innerText = people[index].name;
+  job.innerText = people[index].job;
+}
+
 fowardButton.addEventListener("click", (e) => {
   setSlideIndex("foward");
-  portrait.src = people[currentIndex].img;
-  console.log(currentIndex);
+  changeSlide(currentIndex);
 });
 
 backButton.addEventListener("click", (e) => {
   setSlideIndex();
-  console.log(currentIndex);
-  portrait.src = people[currentIndex].img;
+  changeSlide(currentIndex);
+});
+
+window.addEventListener("DOMContentLoaded", (e) => {
+  changeSlide(0);
 });
