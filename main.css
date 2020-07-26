@@ -202,3 +202,40 @@ img {
     padding: 1.8rem 2.2rem;
   }
 }
+
+/* Animation */
+@keyframes showPortrait {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.portrait {
+  animation: showPortrait;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes fadeToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  75% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.fadeToRight {
+  animation-name: fadeToRight;
+  animation-duration: 1s;
+}

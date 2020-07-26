@@ -53,9 +53,25 @@ function changeSlide(index) {
   job.innerText = people[index].job;
 }
 
+// apply animation after changeSlide
+
+const applyAnimation = () => {
+  portrait.classList.toggle("portrait");
+  quote.classList.toggle("fadeToRight");
+};
+
+// Event Listeners
+
+window.addEventListener("DOMContentLoaded", (e) => {
+  document.querySelector(".background-art").classList.toggle("portrait");
+  changeSlide(0);
+  applyAnimation();
+});
+
 fowardButton.addEventListener("click", (e) => {
   setSlideIndex("foward");
   changeSlide(currentIndex);
+  applyAnimation();
 });
 
 backButton.addEventListener("click", (e) => {
@@ -63,6 +79,11 @@ backButton.addEventListener("click", (e) => {
   changeSlide(currentIndex);
 });
 
-window.addEventListener("DOMContentLoaded", (e) => {
-  changeSlide(0);
-});
+// reset animation when animations end
+portrait.addEventListener("animationend", () =>
+  portrait.classList.toggle("portrait")
+);
+
+quote.addEventListener("animationend", () =>
+  quote.classList.toggle("fadeToRight")
+);
