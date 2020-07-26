@@ -77,6 +77,7 @@ fowardButton.addEventListener("click", (e) => {
 backButton.addEventListener("click", (e) => {
   setSlideIndex();
   changeSlide(currentIndex);
+  applyAnimation();
 });
 
 // reset animation when animations end
